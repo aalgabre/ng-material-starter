@@ -1,0 +1,19 @@
+<mat-toolbar class="mat-elevation" color="primary">
+  <div style="text-align: center">
+    <img alt=" angular " class="logo " src="../../../assets/img/angular-white-transparent.svg ">
+  </div>
+</mat-toolbar>
+<mat-nav-list class="sidenav-list">
+  <a class="menu-items" mat-list-item routerLink="/signup " (click)="onClose() ">
+    <mat-icon>face</mat-icon>
+    <span class="nav-caption ">Signup</span>
+  </a>
+  <a class="menu-items" mat-list-item routerLink="/login " (click)="onClose() ">
+    <mat-icon>input</mat-icon>
+    <span class="nav-caption ">Login</span>
+  </a>
+  <a class="menu-items" mat-list-item (click)="onClose() ">
+    <mat-icon>eject</mat-icon>
+    <span class="nav-caption ">Logout</span>
+  </a>
+</mat-nav-list>

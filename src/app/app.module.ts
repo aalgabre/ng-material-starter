@@ -1,6 +1,6 @@
 import { LayoutComponent } from './layout/layout.component';
 import { AppRoutingModule } from './app.routing.module';
-import { LoginComponent } from './auth/login/login.component';
+import { LoginComponent } from './auth/containers/login/login.component';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -18,8 +18,6 @@ import { FlexLayoutModule } from '@angular/flex-layout';
     LoginComponent
   ],
   imports: [
-    CommonModule,
-    RouterModule,
     AppRoutingModule,
     ReactiveFormsModule,
     BrowserModule,

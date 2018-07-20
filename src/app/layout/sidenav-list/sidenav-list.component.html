@@ -1,8 +1,11 @@
 <mat-toolbar class="mat-elevation" color="primary">
-  <div style="text-align: center">
-    <img alt=" angular " class="logo " src="../../../assets/img/angular-white-transparent.svg ">
+  <div fxFlex fxLayout fxLayoutAlign="flex-end">
+    <button mat-icon-button (click)="onClose()">
+      <mat-icon>close</mat-icon>
+    </button>
   </div>
 </mat-toolbar>
+
 <mat-nav-list class="sidenav-list">
   <a class="menu-items" mat-list-item routerLink="/signup " (click)="onClose() ">
     <mat-icon>face</mat-icon>

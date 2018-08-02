@@ -1,22 +1,24 @@
-import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
-import { TranslateHttpLoader } from '@ngx-translate/http-loader';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { SearchComponent } from './components/search/search.component';
+import { MaterialModule } from '../material/material.module';
 
 
 
 @NgModule({
   imports: [
+    MaterialModule
   ],
   exports: [
     CommonModule,
     RouterModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
+    SearchComponent
   ],
-  declarations: []
+  declarations: [SearchComponent]
 })
 export class SharedModule { }

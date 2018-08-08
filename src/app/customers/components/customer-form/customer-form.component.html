@@ -1,0 +1,77 @@
+<form [formGroup]="form" autocomplete="off" novalidate>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="30">
+      <mat-select formControlName="gender" placeholder="Geschlecht">
+        <mat-option *ngFor="let gender of genders" [value]="gender.key">
+          {{gender.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="firstname" placeholder="Vorname">
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="lastname" placeholder="Nachname">
+    </mat-form-field>
+  </div>
+
+  <mat-form-field>
+    <input matInput formControlName="company" placeholder="Firma">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput formControlName="street" placeholder="Strasse">
+  </mat-form-field>
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="zip" placeholder="PLZ">
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="city" placeholder="Ort">
+    </mat-form-field>
+  </div>
+
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="30">
+      <input matInput formControlName="country" placeholder="Land">
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="telephone" placeholder="Telefon">
+    </mat-form-field>
+    <mat-form-field fxFlex="50">
+      <input matInput formControlName="email" placeholder="E-Mail">
+    </mat-form-field>
+  </div>
+
+
+
+  <!-- <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="50">
+      <input matInput [matDatepicker]="picker" placeholder="Geburtsdatum">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field fxFlex="50">
+      <input matInput placeholder="Nationalität">
+    </mat-form-field>
+  </div>
+
+  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+    <mat-form-field fxFlex="30">
+      <mat-select placeholder="Familienstand">
+        <mat-option *ngFor="let gender of genders" [value]="gender.key">
+          {{gender.value}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div> -->
+
+
+</form>

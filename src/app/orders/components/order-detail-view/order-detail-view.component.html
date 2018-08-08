@@ -1,0 +1,38 @@
+<mat-card *ngIf="order">
+  <mat-card-header>
+    <mat-card-title>
+      <h1>{{ order.title }}</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <ng-container *ngIf="order.street">
+        {{ order.street }}
+      </ng-container>
+      <ng-container *ngIf="!order.street">
+        &nbsp;
+      </ng-container>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="detail-container">
+      <div class="detail-section">
+        <label>Strasse:</label>
+        <span>{{ order.street }}</span>
+      </div>
+      <div class="detail-section">
+        <label>PLZ/Ort:</label>
+        <span>{{ order.zip }} {{ order.city }}</span>
+      </div>
+      <div class="detail-section">
+        <label>Land:</label>
+        <span>{{ order.country }}</span>
+      </div>
+      <div class="detail-section">
+        <label>Kommentar:</label>
+        <span>{{order.comment}}</span>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="center-action">
+    <button mat-button [routerLink]="[order.id]">Bearbeiten</button>
+  </mat-card-actions>
+</mat-card>

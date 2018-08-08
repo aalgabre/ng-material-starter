@@ -1,0 +1,28 @@
+<div class="page-container" fxLayout="row" fxLayout.xs="column" fxLayoutGap="40px">
+
+  <button fxHide.lt-md [routerLink]="['new']" mat-mini-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+
+  <button class="fab-button" fxHide.gt-sm mat-fab>
+    <mat-icon>add</mat-icon>
+  </button>
+
+
+  <div fxFlex.sm="100" fxFlex="70">
+
+    <section class="search-container">
+      <app-search [placeholder]="'Suche nach Aufträgen'">
+      </app-search>
+    </section>
+
+
+    <app-order-list [orders]="orders$ | async" (select)="selected = $event"></app-order-list>
+  </div>
+
+
+  <div fxFlex.sm="100" fxFlex="30">
+    <app-order-detail-view [order]="selected"></app-order-detail-view>
+  </div>
+
+</div>

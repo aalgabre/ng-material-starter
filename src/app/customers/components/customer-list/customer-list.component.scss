@@ -1,0 +1,17 @@
+
+.list-container {
+  
+  table {
+    width: 100%;
+
+    .selected {
+      background-color:rgb(238, 238, 238);
+    }
+
+    
+    tr.table-row:hover {
+      cursor: pointer;
+    }
+  
+  }
+}

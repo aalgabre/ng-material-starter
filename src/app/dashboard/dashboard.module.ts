@@ -11,7 +11,6 @@ export const routes = [
 @NgModule({
   imports: [
     SharedModule,
-    MaterialModule,
     RouterModule.forChild(routes)
   ],
   declarations: [

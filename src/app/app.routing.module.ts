@@ -12,10 +12,11 @@ export const routes = [
     children: [
       { path: '', redirectTo: '', pathMatch: 'full' },
       { path: 'dashboard', loadChildren: './dashboard/dashboard.module#DashboardModule' },
-      { path: 'kunden', loadChildren: './kunden/kunden.module#KundenModule' },
+      { path: 'customers', loadChildren: './customers/customers.module#CustomersModule' },
+      { path: 'orders', loadChildren: './orders/orders.module#OrdersModule' },
     ]
   },
-  { path: 'login', component: LoginComponent },
+  { path: 'login', component: LoginComponent, pathMatch: 'full' },
   { path: '**', redirectTo: 'error' }
 ];
 

@@ -1,0 +1,39 @@
+<div fxLayout="row" fxLayoutGap="20px" class="page-container">
+  <mat-card fxFlex.lt-md="100" fxFlex="50">
+    <mat-card-header *ngIf="form.valueChanges | async as f; else newTemplate">
+      <mat-card-title>
+        <h1 *ngIf="f.firstname || f.lastname">{{ f.firstname }} {{f.lastname}}</h1>
+        <h1 *ngIf="!(f.firstname || f.lastname)">Kunde</h1>
+      </mat-card-title>
+      <mat-card-subtitle>{{ f.company }}</mat-card-subtitle>
+    </mat-card-header>
+    <ng-template #newTemplate>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Neuer Kunde</h1>
+        </mat-card-title>
+      </mat-card-header>
+    </ng-template>
+    <mat-card-content>
+      <app-customer-form [customer]="customer" #form></app-customer-form>
+    </mat-card-content>
+    <mat-card-actions>
+
+      <button [disabled]="!form.valid" (click)="save(form.value)" color="primary" mat-raised-button>Speichern</button>
+      <button (click)="back()" mat-button>Zurück</button>
+
+    </mat-card-actions>
+  </mat-card>
+  <!-- <mat-card fxFlex="50">
+    <mat-card-header>
+
+    </mat-card-header>
+    <mat-card-content>
+      <app-customer-form></app-customer-form>
+    </mat-card-content>
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+  </mat-card> -->
+</div>

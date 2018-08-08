@@ -1,0 +1,39 @@
+<div fxLayout="row" fxLayoutGap="20px" class="page-container">
+  <mat-card fxFlex.lt-md="100" fxFlex="50">
+    <mat-card-header *ngIf="form.valueChanges | async as o; else newTemplate">
+      <mat-card-title>
+        <h1 *ngIf="o.title">Auftrag - {{o.title}}</h1>
+        <h1 *ngIf="!o.title">Auftrag</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <ng-template #newTemplate>
+      <mat-card-header>
+        <mat-card-title>
+          <h1>Neuer Auftrag</h1>
+        </mat-card-title>
+      </mat-card-header>
+    </ng-template>
+
+    <mat-card-content>
+      <app-order-form [order]="order" [customers]="customers$ | async" (customerSearch)="searchCustomer($event)" #form></app-order-form>
+    </mat-card-content>
+    <mat-card-actions>
+
+      <button [disabled]="!form.valid" (click)="save(form.value)" color="primary" mat-raised-button>Speichern</button>
+      <button (click)="back()" mat-button>Zurück</button>
+
+    </mat-card-actions>
+  </mat-card>
+  <!-- <mat-card fxFlex="50">
+    <mat-card-header>
+
+    </mat-card-header>
+    <mat-card-content>
+      <app-customer-form></app-customer-form>
+    </mat-card-content>
+    <mat-card-actions>
+
+
+    </mat-card-actions>
+  </mat-card> -->
+</div>

@@ -1,0 +1,42 @@
+<mat-card *ngIf="customer">
+  <mat-card-header>
+    <mat-card-title>
+      <h1>{{ customer.firstname }} {{ customer.lastname }}</h1>
+    </mat-card-title>
+    <mat-card-subtitle>
+      <ng-container *ngIf="customer.company">
+        {{ customer.company }}
+      </ng-container>
+      <ng-container *ngIf="!customer.company">
+        &nbsp;
+      </ng-container>
+    </mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="detail-container">
+      <div class="detail-section">
+        <label>Strasse:</label>
+        <span>{{ customer.street }}</span>
+      </div>
+      <div class="detail-section">
+        <label>PLZ/Ort:</label>
+        <span>{{ customer.zip }} {{ customer.city }}</span>
+      </div>
+      <div class="detail-section">
+        <label>Land:</label>
+        <span>{{ customer.country }}</span>
+      </div>
+      <div class="detail-section">
+        <label>E-Mail:</label>
+        <span>{{customer.email}}</span>
+      </div>
+      <div class="detail-section">
+        <label>Telefon:</label>
+        <span>{{ customer.telephone }}</span>
+      </div>
+    </div>
+  </mat-card-content>
+  <mat-card-actions class="center-action">
+    <button mat-button [routerLink]="[customer.id]">Bearbeiten</button>
+  </mat-card-actions>
+</mat-card>

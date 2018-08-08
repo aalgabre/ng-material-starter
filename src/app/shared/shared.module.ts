@@ -5,7 +5,9 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './components/search/search.component';
 import { MaterialModule } from '../material/material.module';
-
+import { AhvComponent } from './components/ahv/ahv.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { NgxMatSelectSearchModule } from 'ngx-mat-select-search';
 
 
 @NgModule({
@@ -14,11 +16,14 @@ import { MaterialModule } from '../material/material.module';
   ],
   exports: [
     CommonModule,
+    ReactiveFormsModule,
     RouterModule,
     FlexLayoutModule,
     HttpClientModule,
-    SearchComponent
+    SearchComponent,
+    MaterialModule,
+    NgxMatSelectSearchModule
   ],
-  declarations: [SearchComponent]
+  declarations: [SearchComponent, AhvComponent]
 })
 export class SharedModule { }
